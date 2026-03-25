@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{96A9A0EC-5A4D-4CCF-B58B-12A4D8E267F8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SkyGate_ADONET</RootNamespace>
+    <AssemblyName>SkyGate-ADONET</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=9.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.9.0.10\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\Repositories\DepartmentRepository.cs" />
+    <Compile Include="DAL\Repositories\EmployeeRepository.cs" />
+    <Compile Include="DAL\Repositories\IDepartmentRepository.cs" />
+    <Compile Include="DAL\Repositories\IEmployeeRepository.cs" />
+    <Compile Include="DAL\Repositories\ISysLogRepository.cs" />
+    <Compile Include="DAL\Repositories\ISysRoleRepository.cs" />
+    <Compile Include="DAL\Repositories\ISysUserRoleRepository.cs" />
+    <Compile Include="DAL\Repositories\SysLogRepository.cs" />
+    <Compile Include="DAL\Repositories\SysRoleRepository.cs" />
+    <Compile Include="DAL\Repositories\SysUserRoleRepository.cs" />
+    <Compile Include="Form\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ConnectionStringHelper.cs" />
+    <Compile Include="MainApplicationContext.cs" />
+    <Compile Include="Models\DTOs\EmployeeCreateDto.cs" />
+    <Compile Include="Models\DTOs\EmployeeEditDto.cs" />
+    <Compile Include="Models\DTOs\EmployeeSearchCriteria.cs" />
+    <Compile Include="Models\DTOs\EmployeeHRViewModel.cs" />
+    <Compile Include="Models\DTOs\EmployeeViewModel.cs" />
+    <Compile Include="Models\Entities\Department.cs" />
+    <Compile Include="Models\Entities\Employee.cs" />
+    <Compile Include="Models\Entities\SysLog.cs" />
+    <Compile Include="Models\Entities\SysRole.cs" />
+    <Compile Include="Models\Entities\SysUserRole.cs" />
+    <Compile Include="Models\Enums\EmployeeStatus.cs" />
+    <Compile Include="Models\Enums\UserRole.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ConfigurationService.cs" />
+    <Compile Include="Services\DepartmentService.cs" />
+    <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\Interfaces\IDepartmentService.cs" />
+    <Compile Include="Services\Interfaces\IEmployeeService.cs" />
+    <Compile Include="Services\Interfaces\ILogService.cs" />
+    <Compile Include="Services\Interfaces\ISysRoleService.cs" />
+    <Compile Include="Services\Interfaces\ISysUserRoleService.cs" />
+    <Compile Include="Services\LogService.cs" />
+    <Compile Include="Services\SysRoleService.cs" />
+    <Compile Include="Services\SysUserRoleService.cs" />
+    <Compile Include="Services\Utilities\RoleConverter.cs" />
+    <Compile Include="UserControl\TopUserIconUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\TopUserIconUserControl.Designer.cs">
+      <DependentUpon>TopUserIconUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\AttendanceReportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\AttendanceReportUserControl.Designer.cs">
+      <DependentUpon>AttendanceReportUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\AttendanceUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\AttendanceUserControl.Designer.cs">
+      <DependentUpon>AttendanceUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\HRManagementUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\HRManagementUserControl.Designer.cs">
+      <DependentUpon>HRManagementUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\LeaveApproveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\LeaveApproveUserControl.Designer.cs">
+      <DependentUpon>LeaveApproveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\LeaveRequestUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\LeaveRequestUserControl.Designer.cs">
+      <DependentUpon>LeaveRequestUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\OTApproveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\OTApproveUserControl.Designer.cs">
+      <DependentUpon>OTApproveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\OTRequestUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\OTRequestUserControl.Designer.cs">
+      <DependentUpon>OTRequestUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SystemManagementUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\SystemManagementUserControl.Designer.cs">
+      <DependentUpon>SystemManagementUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.cs" />
+    <Compile Include="Utilities\IdGenerator.cs" />
+    <Compile Include="Utilities\LayoutManager.cs" />
+    <Compile Include="Utilities\SortableBindingList.cs" />
+    <Compile Include="Utilities\UiHelpers.cs" />
+    <Compile Include="Utilities\ValidationHelper.cs" />
+    <EmbeddedResource Include="Form\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControl\AttendanceReportUserControl.resx">
+      <DependentUpon>AttendanceReportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\AttendanceUserControl.resx">
+      <DependentUpon>AttendanceUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\HRManagementUserControl.resx">
+      <DependentUpon>HRManagementUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\LeaveApproveUserControl.resx">
+      <DependentUpon>LeaveApproveUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\LeaveRequestUserControl.resx">
+      <DependentUpon>LeaveRequestUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\OTApproveUserControl.resx">
+      <DependentUpon>OTApproveUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\OTRequestUserControl.resx">
+      <DependentUpon>OTRequestUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TopUserIconUserControl.resx">
+      <DependentUpon>TopUserIconUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-5050.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-3535.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SkyGate1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SkyGate1-1.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

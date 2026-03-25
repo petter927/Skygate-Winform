@@ -1,0 +1,34 @@
+## [ 專案產出物 (重要：避免上傳執行檔) ]
+[Bb]in/
+[Oo]bj/
+[Pp]ublish/
+
+## [ Visual Studio 暫存與環境設定 ]
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.userosscache
+*.VC.db
+*.opensdf
+*.opendb
+*.cache
+*.temp
+
+## [ 資源編譯產出物 ]
+# WinForms 的資源檔 (.resx) 編譯後會產生 .resources，通常不進版控
+*.resources
+
+## [ SQL Server Express / LocalDB 檔案 ]
+# 如果你在開發環境使用實體資料庫檔案，建議排除
+*.mdf
+*.ldf
+
+## [ 測試與分析工具 ]
+TestResults/
+_ReSharper*/
+*.pfx
+*.publishsettings
+
+## [ 其他開發工具 (如 VS Code) ]
+.vscode/
