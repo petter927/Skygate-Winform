@@ -5,9 +5,8 @@ namespace SkyGate_ADONET
 {
     internal static class Program
     {
-        /// <summary>
-        /// 應用程式的主要進入點（使用 ApplicationContext 管理登入 / 登出流程）。
-        /// </summary>
+        
+        // 應用程式的主要進入點（使用 ApplicationContext 管理登入 / 登出流程）。        
         [STAThread]
         static void Main()
         {

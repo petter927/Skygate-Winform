@@ -12,7 +12,7 @@ namespace SkyGate_ADONET.Utilities
         
         public static string GenerateEmployeeId()
         {
-            // 簡單的員工編號生成邏輯，實際應用中可能需要從資料庫獲取最新編號
+            // 簡單的員工編號生成，實際應用中可能需要從資料庫取最新編號
             return $"Etemp{DateTime.Now:yyyyMMddHHmmss}";
         }
 

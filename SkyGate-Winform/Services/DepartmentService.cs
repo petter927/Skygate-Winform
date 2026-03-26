@@ -54,7 +54,7 @@ namespace SkyGate_ADONET.Services
             if (existingDept != null)
                 return (false, "部門編號已存在");
 
-            // 這裡應該調用 Repository 的 Create 方法
+            // 這裡應該用 Repository 的 Create 方法
             // bool result = _departmentRepository.CreateDepartment(department);
             bool result = true; // 暫時返回成功，實際應該調用 Repository
 
@@ -67,7 +67,7 @@ namespace SkyGate_ADONET.Services
             if (string.IsNullOrEmpty(department.DeptName))
                 return (false, "部門名稱不能為空");
 
-            // 這裡應該調用 Repository 的 Update 方法
+            // 這裡應該用 Repository 的 Update 方法
             // bool result = _departmentRepository.UpdateDepartment(department);
             bool result = true; // 暫時返回成功，實際應該調用 Repository
 

@@ -79,13 +79,13 @@ namespace SkyGate_ADONET
                         imagePath = @"..\..\pic\web-settings.png";
                         break;
                     default:
-                        imagePath = null; // 對應原本的 _ => null
+                        imagePath = null; 
                         break;
                 }
 
                 Button btn = new Button
                 {
-                    Text = "",// button.Text,
+                    Text = "",
                     Tag = button.Key,
                     Size = new Size(130, 40),
                     Margin = new Padding(0),
@@ -208,7 +208,7 @@ namespace SkyGate_ADONET
                     btnName = @"系統管理"; ;
                     break;
                 default:
-                    btnName = @""; ; // 對應原本的 _ => null
+                    btnName = @""; ; 
                     break;
             }
             button.Text = btnName;

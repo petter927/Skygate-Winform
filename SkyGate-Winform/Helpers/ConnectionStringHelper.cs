@@ -7,20 +7,18 @@ namespace SkyGate_Winform.Helpers
     {
         private const string EnvVariableName = "SKYGATE_CONNECTION_STRING";
         private const string ConfigKeyName = "SkyGateConnection";
-
-        /// <summary>
-        /// 取得連線字串：優先從環境變數，回退到 App.config
-        /// </summary>
+        
+        /// 取得連線字串：優先從環境變數，回退到 App.config        
         public static string GetConnectionString()
         {
-            // 優先從環境變數取得（生產、GitHub 環境）
+            // 優先從環境變數取得
             string envConnection = Environment.GetEnvironmentVariable(EnvVariableName);
             if (!string.IsNullOrWhiteSpace(envConnection))
             {
                 return envConnection;
             }
 
-            // 回退到 App.config（本地開發測試用）
+            // 退到 App.config（Local開發測試用）
             string configConnection = ConfigurationManager.ConnectionStrings[ConfigKeyName]?.ConnectionString;
             if (!string.IsNullOrWhiteSpace(configConnection))
             {

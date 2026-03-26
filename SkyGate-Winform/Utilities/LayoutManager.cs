@@ -21,9 +21,8 @@ namespace SkyGate_ADONET.Utilities
         private readonly Dictionary<string, List<ControlConfig>> _layouts;
         private readonly Point _baseLocation;
         private readonly int _spacing;
-
-        /// <summary>        
-        /// 已Lbl的座標當基準, Lbl 座標 轉 Txt座標(+59,-6), 如果偵測到Txt則Base = (+59,-6)
+               
+        /// 以Lbl的座標當基準, Lbl 座標 轉 Txt座標(+59,-6), 如果偵測到Txt則Base = (+59,-6)
         /// 每個Control的Y差距都是30
         /// </summary>      
         //public LayoutManager(Control container, Point baseLocation, int spacing)
@@ -174,19 +173,7 @@ namespace SkyGate_ADONET.Utilities
 
 
         public void SetTextBoxReadonly(string[] controlName)
-        {
-            /*
-            foreach (var layout in _layouts.Values)
-            {
-                foreach (var config in layout)
-                {
-                    if (config.Control is TextBox textBox && textBox.Name.Equals("txtEID", StringComparison.OrdinalIgnoreCase))
-                    {
-                        textBox.ReadOnly = true;
-                    }
-                }
-            }
-            */
+        {            
             if (_layouts.ContainsKey("AddTxt"))
             {
                 foreach (var config in _layouts["AddTxt"])

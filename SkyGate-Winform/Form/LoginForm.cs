@@ -152,7 +152,7 @@ namespace SkyGate_ADONET
                 return;
             }
 
-            // 呼叫驗證方法
+            // 驗證方法
             string errorMessage;
             bool isSuccess = VerifyLogin(account, password, out errorMessage);
 

@@ -60,21 +60,6 @@ namespace SkyGate_ADONET
 
             mainForm.FormClosed += (s, args) =>
             {
-                /*
-                if (this.MainForm.InvokeRequired)
-                {
-                    this.MainForm.Invoke(new Action(() =>
-                    {
-                        // Form1 關閉代表登出，切換回登入畫面
-                        ShowLoginForm();
-                    }));
-                }
-                else
-                {
-                    ShowLoginForm();
-                }
-                */
-
                 // 根據 Form1 關閉時的 Tag 判斷意圖
                 if (mainForm.Tag as string == "LoggingOut")
                 {                    

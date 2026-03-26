@@ -276,18 +276,14 @@ namespace SkyGate_ADONET.Services
         }
 
         
-
-        // 其他方法實作...
         public Employee GetEmployeeById(string empId) => _employeeRepository.GetEmployeeById(empId);
         public List<Employee> GetSupervisors() => _employeeRepository.GetSupervisors();
         public (bool success, string message) UpdateEmployee(Employee employee)
-        {
-            /* 實作 */
+        {            
             return (true, "1");
         }
         public (bool success, string message) AssignRoleToEmployee(string empId, string roleId)
-        {
-            /* 實作 */
+        {            
             return (true, "1");
         }
         public string GetEmployeeRole(string empId) => _employeeRepository.GetEmployeeRoleID(empId);
