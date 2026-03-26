@@ -35,4 +35,17 @@
 本專案的核心目標是透過模擬實際的行政作業流程，練習如何撰寫具備擴展性的程式碼架構。透過此過程，我成功掌握了從底層資料庫串接、商業邏輯封裝到前端 UI 組件化的開發全流程。
 
 ---
+
+## 📸 系統截圖 (Screenshots)
+![登入介面](images/screenshot/LoginScreen1.png)
+![職務功能](images/screenshot/Functions.png)
+![滑鼠追蹤](images/screenshot/Mouse_Tracking.png)
+![請假申請審核](images/screenshot/LeaveRequest.png)
+![加班申請審核](images/screenshot/overtime.png)
+![人事管理](images/screenshot/HRM.png)
+![紀錄查詢](images/screenshot/Report.png)
+
+---
+
+
 [⬅ 回到個人首頁](https://github.com/petter927/petter927)
