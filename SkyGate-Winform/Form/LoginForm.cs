@@ -50,6 +50,7 @@ namespace SkyGate_ADONET
                                             LEFT JOIN SysRole sr ON sur.RoleID = sr.RoleID 
                                             WHERE Account = @Account ";
 
+                    // 1. 參數化查詢：這是為了防止惡意代碼從帳號輸入框注入資料庫 (SQL Injection)
                     using (SqlCommand cmd = new SqlCommand(sql, con))
                     {
                         cmd.Parameters.AddWithValue("@Account", account);
@@ -68,7 +69,8 @@ namespace SkyGate_ADONET
                                 }
                                 
                                 string storedPassword = reader["Password"].ToString();
-                                
+                                // 2. 雜湊比對：資料庫不存明碼密碼。比對時先將使用者輸入雜湊化，再跟 DB 裡的雜湊值比對。
+                                // 這確保了就算資料庫管理員也看不到使用者的原始密碼。
                                 string encryptedPassword = EncryptPassword(password);
 
                                 if (storedPassword == encryptedPassword)
@@ -79,7 +81,8 @@ namespace SkyGate_ADONET
                                     string RoleName = reader["RoleName"].ToString();
                                     
                                     UpdateLastLogin(accountID);
-                                    
+
+                                    // 3. 全域狀態：將成功登入者的資訊暫存，讓後續 UserControl (如請假、加班) 能識別操作者。
                                     UserInfo.EmpID = empID;
                                     UserInfo.EmpName = EmpName;
                                     UserInfo.RoleName = RoleName;
