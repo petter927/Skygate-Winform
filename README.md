@@ -37,13 +37,13 @@
 ---
 
 ## 📸 系統截圖 (Screenshots)
-![登入介面](images/screenshot/LoginScreen1.png)
-![職務功能](images/screenshot/Functions.png)
-![滑鼠追蹤](images/screenshot/Mouse_Tracking.png)
-![請假申請審核](images/screenshot/LeaveRequest.png)
-![加班申請審核](images/screenshot/overtime.png)
-![人事管理](images/screenshot/HRM.png)
-![紀錄查詢](images/screenshot/Report.png)
+![登入介面](SkyGate-Winform/images/screenshot/LoginScreen1.png)
+![職務功能](SkyGate-Winform/images/screenshot/Functions.png)
+![滑鼠追蹤](SkyGate-Winform/images/screenshot/Mouse_Tracking.png)
+![請假申請審核](SkyGate-Winform/images/screenshot/LeaveRequest.png)
+![加班申請審核](SkyGate-Winform/images/screenshot/overtime.png)
+![人事管理](SkyGate-Winform/images/screenshot/HRM.png)
+![紀錄查詢](SkyGate-Winform/images/screenshot/Report.png)
 
 ---
 
