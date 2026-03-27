@@ -57,7 +57,9 @@ namespace SkyGate_ADONET
 
         private string GenerateLogID(string now)
         {
-            // 使用時間戳記 + 隨機數，避免重複            
+            // 為什麼使用隨機數?
+            // 在多台電腦同時打卡時，僅靠 yyyyMMddHHmmss 可能在同一秒產生衝突。
+            // 加入隨機數是簡單且有效的「去中心化」防重疊機制。            
             string randomPart = new Random().Next(100, 999).ToString();
             return $"LOG{now}{randomPart}";
         }
@@ -112,7 +114,9 @@ namespace SkyGate_ADONET
             Clock(logType, now);
         }
 
-        // 釋放資源
+        // 為什麼要覆寫 Dispose?
+        // 當 UserControl 被從 Panel 移除時，Timer 不會自動停止。
+        // 必須顯式釋放，否則會持續佔用 CPU 資源並可能引發 NullReference 錯誤。
         protected override void Dispose(bool disposing)
         {
             if (disposing)
