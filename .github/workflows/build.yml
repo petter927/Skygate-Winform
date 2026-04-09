@@ -1,0 +1,28 @@
+name: WinForm .NET Framework CI
+
+# 修正：確保 on 底下的 push 是縮進兩個空格的
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: windows-latest 
+
+    steps:
+    - name: 1. 複製原始碼
+      uses: actions/checkout@v4
+
+    - name: 2. 設定 MSBuild 環境
+      uses: microsoft/setup-msbuild@v2
+
+    - name: 3. 設定 NuGet 工具 (處理套件)
+      uses: nuget/setup-nuget@v2
+
+    - name: 4. 恢復 NuGet 套件 (Restore)     
+      run: nuget restore SkyGate-ADONET.sln
+
+    - name: 5. 執行編譯 (Build)     
+      run: msbuild SkyGate-ADONET.sln /p:Configuration=Release /p:Platform="Any CPU"
