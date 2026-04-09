@@ -28,5 +28,5 @@ jobs:
       run: msbuild SkyGate-ADONET.sln /p:Configuration=Release /p:Platform="Any CPU"
 
     - name: 6. 執行單元測試 (Run Tests)
-      # 這是 MSTest 在 GitHub Actions 上的標準跑法
-      run: vstest.console.exe SkyGate-ADONET.Tests\bin\Release\SkyGate-ADONET.Tests.dll
+      # 使用萬用字元 ** 來搜尋所有 Release 資料夾下的測試 DLL
+      run: vstest.console.exe **\bin\Release\*Tests.dll
