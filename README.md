@@ -1,6 +1,6 @@
 # Skygate-Winform (HR & Attendance Management 練習作品) 👋
 
-![Build Status](https://github.com)
+![Build Status](../../actions/workflows/build.yml/badge.svg)
 
 
 本專案是我在學習 C# 與 .NET 期間，將製造業觀察到的行政流程（如請假、加班申請）轉化為軟體的實踐作品。開發重點在於實踐 **「職責分離 (SoC)」** 的設計原則，並建構一個具備高度擴展性的系統架構。
